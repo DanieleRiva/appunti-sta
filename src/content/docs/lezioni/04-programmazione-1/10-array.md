@@ -5,7 +5,7 @@ description: Come raggruppare più valori dello stesso tipo in un'unica struttur
 
 ## Il Problema delle Variabili Multiple
 
-Supponiamo di voler salvare i valori letti da 5 sensori di temperatura. Con quello che sappiamo, dovremmo fare così:
+Supponiamo di voler salvare i valori letti da 5 sensori di temperatura. Con quello che sappiamo fino ad ora, dovremmo fare così:
 
 ```cpp
 int temp1 = 0;
@@ -15,19 +15,19 @@ int temp4 = 0;
 int temp5 = 0;
 ```
 
-Cinque variabili separate, cinque nomi diversi, cinque righe di dichiarazione. Se diventassero 50? O 100? Il codice diventerebbe ingestibile. Esiste una soluzione molto più elegante: l'**array**.
+Cinque variabili separate, cinque nomi diversi, cinque righe di dichiarazione. Se diventassero 50, Il codice diventerebbe ingestibile.
 
 ---
 
 ## Cos'è un Array?
 
-Un array è una **sequenza di valori dello stesso tipo**, raccolti sotto un unico nome e accessibili tramite un numero chiamato **indice**.
+Un array è una **sequenza di valori dello stesso tipo**, raccolti all'interno di un'unica variabile e accessibili tramite un numero chiamato **indice**, che rappresenta la posizione degli elementi dentro un array.
 
-### L'analogia: Un palazzo di appartamenti
+### Analogia: un palazzo di appartamenti
 
 Un palazzo ha un unico nome (es. "Palazzo Rossi") ma al suo interno ci sono tanti appartamenti, ognuno con un numero: appartamento 0, appartamento 1, appartamento 2... Per trovare un inquilino specifico basta dire il nome del palazzo e il numero dell'appartamento.
 
-Un array funziona esattamente così: ha un nome unico e ogni elemento ha un indice numerico.
+Un array funziona seguendo la stessa logica: ha un nome e ogni elemento ha un indice numerico.
 
 ---
 
@@ -66,9 +66,9 @@ Serial.println(temperature[1]); // Ora stampa: 30
 
 ---
 
-## Array e Ciclo `for`: La Coppia Perfetta
+## Array e Ciclo `for`
 
-Il vero potere degli array emerge quando li si combina con i cicli `for`. Anziché accedere agli elementi uno per uno, si usa il contatore `i` come indice per scorrere automaticamente tutti gli elementi.
+La vera utilità degli array emerge quando li si combina con i cicli `for`. Anziché accedere agli elementi uno per uno, si usa il contatore `i` come indice per scorrere automaticamente tutti gli elementi.
 
 ```cpp
 int temperature[5] = {22, 19, 25, 21, 23};
@@ -99,7 +99,7 @@ bool stati[4] = {true, false, true, true};
 
 ## Esempio Pratico: Gestire più LED
 
-Gli array sono perfetti per gestire più pin o più componenti insieme. Invece di accendere ogni LED singolarmente, si raccolgono i pin in un array e si usa un ciclo.
+Gli array sono utili per gestire più pin o più componenti insieme. Invece di accendere ogni LED singolarmente, si raccolgono i pin in un array e si usa un ciclo.
 
 ```cpp
 // I pin dei tre LED
@@ -113,7 +113,7 @@ void setup() {
 }
 
 void loop() {
-  // Accende i LED uno alla volta con un effetto "scala"
+  // Accende i LED uno alla volta
   for (int i = 0; i < 3; i++) {
     digitalWrite(ledPins[i], HIGH);
     delay(200);
@@ -122,27 +122,4 @@ void loop() {
 }
 ```
 
-Senza l'array, questo codice richiederebbe tre `pinMode()` e sei `digitalWrite()` scritti a mano. Con l'array, il ciclo fa tutto automaticamente — e se aggiungessimo un quarto LED, basterebbe modificare due righe.
-
----
-
-## Trovare la Dimensione di un Array
-
-Per sapere quanti elementi contiene un array senza doverlo ricordare a memoria, si usa l'operatore `sizeof`:
-
-```cpp
-int valori[8] = {1, 2, 3, 4, 5, 6, 7, 8};
-
-int dimensione = sizeof(valori) / sizeof(valori[0]);
-// sizeof(valori)    → numero totale di byte occupati dall'array
-// sizeof(valori[0]) → byte occupati da un singolo elemento
-// Il risultato è il numero di elementi: 8
-
-for (int i = 0; i < dimensione; i++) {
-  Serial.println(valori[i]);
-}
-```
-
-:::note[Perché questa formula?]
-`sizeof` restituisce i **byte** totali, non il numero di elementi. Un `int` occupa 2 byte su Arduino, quindi un array di 8 interi occupa 16 byte. Dividendo 16 per 2 si ottiene correttamente 8. Questa formula funziona per qualsiasi tipo di dato e qualsiasi dimensione.
-:::
+Senza l'array, questo codice richiederebbe tre `pinMode()` e sei `digitalWrite()` scritti a mano. Con l'array, il ciclo fa tutto automaticamente. Se volessimo aggiungere un quarto LED, basterebbe modificare due righe.
