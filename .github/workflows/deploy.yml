@@ -19,8 +19,6 @@ jobs:
 
       - name: Install pnpm
         uses: pnpm/action-setup@v4
-        with:
-          version: 9 # Usa l'ultima versione di pnpm 9
 
       - name: Setup Node.js (v22 richiesto da Astro 6)
         uses: actions/setup-node@v4
