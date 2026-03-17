@@ -3,14 +3,14 @@ title: Blocchi di Codice e Funzioni
 description: Come il codice è organizzato in blocchi delimitati da parentesi graffe, e come le funzioni permettono di riutilizzare pezzi di programma.
 ---
 
-## Il Codice non è una lista infinita
+## 🔄 Il Codice non è una lista infinita
 
 Pensa a come è scritto un libro: non è un Wall of Text di testo infinito, ma è diviso in capitoli, paragrafi, sezioni. Ogni gruppo di frasi parla di una cosa precisa. Se cerchi un'informazione, sai già in quale capitolo guardare.
 Il codice funziona allo stesso modo. Le istruzioni non vengono scritte tutte di fila alla rinfusa, ma organizzate in blocchi: gruppi di istruzioni che appartengono insieme e svolgono un compito specifico.
 
 ---
 
-## I Blocchi di Codice
+## 🧩 I Blocchi di Codice
 
 In C++, un blocco di codice è tutto ciò che si trova **tra una parentesi graffa aperta `{` e una chiusa `}`**.
 
@@ -43,7 +43,7 @@ Notare come il blocco figlio sia spostato verso destra rispetto al padre. Questo
 
 ---
 
-## Le Funzioni
+## ⚡ Le Funzioni
 
 Una **funzione** è un blocco di codice a cui viene dato un **nome**. Invece di riscrivere le stesse istruzioni ogni volta che servono, le si raccoglie in una funzione e la si **chiama** quando necessario, facendo eseguire il codice contenuto al suo interno solo quando ne abbiamo bisogno.
 
@@ -80,7 +80,7 @@ void loop() {
 
 ---
 
-## Perché usare le Funzioni?
+## 🤔 Perché usare le Funzioni?
 
 Organizzare il codice in funzioni porta tre vantaggi enormi:
 

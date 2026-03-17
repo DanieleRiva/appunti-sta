@@ -3,7 +3,7 @@ title: Introduzione
 description: Cos'è la programmazione, il limite dell'hardware, il C++ e gli strumenti di sviluppo per Arduino.
 ---
 
-## Cos'è la programmazione?
+## 🤔 Cos'è la programmazione?
 
 Fino ad ora si è lavorato come degli elettricisti: preso una fonte di energia, dei cavi, degli interruttori, dei LED e dei pulsanti e li abbiamo collegati.
 Un circuito del genere è ***"stupido"***. Premendo il pulsante, la corrente passa e il LED si accende. Rilasciandolo, si spegne. Il circuito fa esattamente ed esclusivamente ciò che la sua struttura fisica gli impone di fare.
@@ -89,7 +89,7 @@ Questo software fa tre cose fondamentali:
 
 ---
 
-## Regole Basi della Programmazione
+## 📏 Regole Basi della Programmazione
 
 1. **Si legge dall'alto verso il basso:** Arduino legge ed esegue le istruzioni esattamente nell'ordine in cui le scrivete, una riga alla volta. Non salta passaggi e non torna indietro da solo.
 2. **Attenzione alle maiuscole (Case Sensitive):** Per Arduino, scrivere `LED`, `Led` o `led` significa indicare tre cose completamente diverse. Sbagliare una maiuscola bloccherà il programma.

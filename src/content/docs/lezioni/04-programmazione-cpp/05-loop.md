@@ -3,7 +3,7 @@ title: loop()
 description: Come funziona il cuore pulsante di ogni sketch Arduino e perché il ciclo infinito è la base di qualsiasi progetto.
 ---
 
-## Il Cuore di Arduino
+## ❤️ Il Cuore di Arduino
 
 Dopo che `setup()` ha terminato il suo lavoro, Arduino passa all'esecuzione di `loop()` e non ne uscirà mai, a meno che non lo spegniamo.
 
@@ -11,7 +11,7 @@ Dopo che `setup()` ha terminato il suo lavoro, Arduino passa all'esecuzione di `
 
 ---
 
-## Come funziona in pratica
+## ▶️ Come funziona in pratica
 
 ```cpp
 void loop() {
@@ -26,7 +26,7 @@ La ripetizione del `loop()` è estremamente veloce: Arduino può eseguire milion
 
 ---
 
-## Un Esempio Concreto
+## 🔍 Un Esempio Concreto
 
 Questo programma legge continuamente lo stato di un pulsante e, se premuto, accende un LED.
 
@@ -53,7 +53,7 @@ void loop() {
 Vedremo più avanti cosa sono `if` e `else`. <br>
 Senza il `loop()`, Arduino leggerebbe il pulsante **una volta sola** all'avvio e poi si fermerebbe. Grazie al ciclo, invece, la lettura avviene continuamente e il LED risponde in tempo reale a ogni pressione.
 
-## Problema del Debounce
+## ⚠️ Problema del Debounce
 Quando si preme un pulsante fisico, ci si aspetta un segnale pulito: prima LOW, poi HIGH. In realtà, le lamelle metalliche interne al pulsante non si toccano in modo netto - **rimbalzano** meccanicamente per qualche millisecondo, producendo una raffica di segnali HIGH e LOW rapidissimi prima di stabilizzarsi.
 
 Per Arduino, che legge milioni di volte al secondo all'interno del `loop()`, ogni rimbalzo sembra una pressione separata. Un singolo click fisico può quindi essere interpretato come 10, 20 o 30 pressioni diverse.
@@ -62,7 +62,7 @@ Il **debounce** risolve il problema ignorando tutti i segnali successivi al prim
 
 ---
 
-## Tenere `loop()` Pulito
+## 🧹 Tenere `loop()` Pulito
 
 Quando il programma diventa più complesso, può essere tentante mettere tutto il codice dentro `loop()`. Questo lo rende però lungo, difficile da leggere e da correggere.
 
@@ -84,7 +84,7 @@ void loop() {
 
 ---
 
-## Comando `delay()`
+## ⏱️ Comando `delay()`
 
 A volte si vuole bloccare intenzionalmente l'esecuzione del programma. Il comando `delay()` mette in **pausa** Arduino per un numero di millisecondi specificato (1 secondo = 1000 millisecondi).
 

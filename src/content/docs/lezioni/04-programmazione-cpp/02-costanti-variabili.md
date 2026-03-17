@@ -3,7 +3,7 @@ title: Costanti e Variabili
 description: Come salvare e gestire i dati in Arduino attraverso costanti e variabili, con i principali tipi di dato in C++.
 ---
 
-## Dove vivono i dati?
+## 💾 Dove vivono i dati?
 
 Ogni programma, anche il più semplice, ha bisogno di ricordare delle informazioni durante la sua esecuzione: la temperatura letta da un sensore, quante volte è stato premuto un pulsante, se un LED è acceso o spento, eccetera...
 
@@ -67,7 +67,7 @@ int monete = 0;
 
 ---
 
-## Data Types
+## 🏷️ Data Types
 
 C++ vuole sapere che tipo di informazione si metterà in una variabile. Questo perché tipi diversi occupano quantità diverse di memoria, e le operazioni che si possono fare su di essi cambiano.
 
@@ -129,7 +129,7 @@ char messaggio[] = "Temperatura OK";
 
 ---
 
-## Riepilogo
+## 📋 Riepilogo
 
 | Tipo | Cosa contiene | Esempio |
 |---|---|---|

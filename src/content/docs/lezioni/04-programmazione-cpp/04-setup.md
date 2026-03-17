@@ -3,7 +3,7 @@ title: setup()
 description: A cosa serve setup(), come si configura la comunicazione seriale e come si dichiarano i pin come INPUT o OUTPUT.
 ---
 
-## La Struttura Obbligatoria di Arduino
+## 🏗️ La Struttura Obbligatoria di Arduino
 
 Ogni programma Arduino ha una struttura fissa e obbligatoria: deve contenere **due funzioni speciali** che Arduino si aspetta sempre di trovare.
 
@@ -21,7 +21,7 @@ Queste due funzioni non le chiamiamo noi: le esegue **Arduino stesso**, automati
 
 ---
 
-## La Funzione `setup()`
+## 🔧 La Funzione `setup()`
 
 `setup()` è la funzione di **configurazione**. Viene eseguita **una volta sola**, subito dopo che Arduino si accende. Il suo scopo è preparare tutto il necessario prima che il programma inizia.
 
@@ -31,7 +31,7 @@ Prima di aprire un negozio, il titolare fa una serie di operazioni: accende le l
 
 ---
 
-## Cosa si fa dentro `setup()`?
+## 📋 Cosa si fa dentro `setup()`?
 
 ### 1. Avviare la Comunicazione Seriale
 
@@ -84,7 +84,7 @@ void setup() {
 
 ---
 
-## Controllare un Componente
+## 🎮 Controllare un Componente
 
 Un pin configurato come `OUTPUT` può essere **acceso** (corrente alta) o **spento** (corrente bassa) usando il comando `digitalWrite()`.
 
@@ -93,7 +93,7 @@ digitalWrite(LED_PIN, HIGH); // Accende il LED (5V)
 digitalWrite(LED_PIN, LOW);  // Spegne il LED (0V)
 ```
 
-## Leggere un Componente
+## 📖 Leggere un Componente
 
 Un pin configurato come `INPUT` può essere **letto** per sapere se c'è corrente o meno, usando `digitalRead()`. Il risultato sarà `HIGH` (pulsante premuto) oppure `LOW` (pulsante non premuto).
 
@@ -111,7 +111,7 @@ In C++ con Arduino, HIGH e LOW corrispondono a "***corrente***" e "***non corren
 
 ---
 
-## Esempio Completo
+## ✅ Esempio Completo
 
 ```cpp
 #define LED_PIN   5
