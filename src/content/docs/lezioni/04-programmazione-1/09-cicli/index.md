@@ -27,20 +27,14 @@ Un ciclo ha sempre tre elementi fondamentali:
 2. Un **blocco di istruzioni** da ripetere
 3. Un **meccanismo di uscita**: qualcosa che prima o poi fa diventare la condizione falsa, fermando il ciclo
 
-Senza il terzo elemento, il ciclo non si ferma mai — è il famoso **ciclo infinito**, quasi sempre un errore.
-
 ---
 
 ## Due tipi di Ciclo
 
-In C++ esistono due cicli principali, adatti a situazioni diverse:
+Vedremo due cicli principali, adatti a situazioni diverse:
 
-**`while`** — *"Ripeti finché..."*
+**`while`**: *"Ripeti finché..."*
 Si usa quando non si sa in anticipo quante volte ripetere. Il ciclo continua finché una condizione rimane vera, indipendentemente dal numero di iterazioni.
 
-**`for`** — *"Ripeti N volte"*
+**`for`**: *"Ripeti N volte"*
 Si usa quando il numero di ripetizioni è noto fin dall'inizio. Raccoglie in una sola riga tutto il necessario per gestire un contatore.
-
-:::note[Quale usare?]
-Una regola pratica: se stai contando (*"fai questa cosa 10 volte"*), usa `for`. Se stai aspettando (*"continua finché non succede X"*), usa `while`. Nelle prossime sezioni vedremo entrambi in dettaglio.
-:::
