@@ -86,9 +86,25 @@ export default defineConfig({
 							collapsed: true,
 						},
 						{
-							label: '💻 Programmazione',
-							autogenerate: { directory: 'lezioni/04-programmazione-cpp' },
+							label: '💻 Programmazione 1',
 							collapsed: true,
+							items: [
+								// Mappiamo i file a mano. Nota: lo 'slug' è il percorso senza estensione e senza i numeri iniziali, perché Starlight li rimuove dalle URL.
+								{ label: 'Introduzione', slug: 'lezioni/04-programmazione-1/01-basi' },
+								{ label: 'Costanti e Variabili', slug: 'lezioni/04-programmazione-1/02-costanti-variabili' },
+								{ label: 'Blocchi di Codice e Funzioni', slug: 'lezioni/04-programmazione-1/03-funzioni' },
+								{ label: 'setup()', slug: 'lezioni/04-programmazione-1/04-setup' },
+								{ label: 'loop()', slug: 'lezioni/04-programmazione-1/05-loop' },
+								{ label: 'if, else, else if', slug: 'lezioni/04-programmazione-1/06-if' },
+								{ label: 'Logica Booleana', slug: 'lezioni/04-programmazione-1/07-logica-booleana' },
+								{ label: 'switch', slug: 'lezioni/04-programmazione-1/08-switch' },
+								{
+									label: '🔄️ Cicli',
+									autogenerate: { directory: 'lezioni/04-programmazione-1/09-cicli' },
+									collapsed: true,
+								},
+								{ label: 'Array', slug: 'lezioni/04-programmazione-1/10-array' }
+							]
 						}
 					]
 				},
