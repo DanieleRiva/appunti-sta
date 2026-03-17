@@ -1,40 +1,45 @@
 ---
-title: Welcome to Starlight
-description: Get started building your docs site with Starlight.
+title: Sistemi e Tecnologie Applicate
+description: Appunti del corso STA di seconda dell'istituto Greppi.\\ Sito web creato da prof. Daniele Riva
 template: splash # Remove or comment out this line to display the site sidebar on this page.
 hero:
-  tagline: Congrats on setting up a new Starlight project!
+  tagline: Appunti del corso STA di seconda dell'istituto Greppi. <br/> Sito web di prof. Daniele Riva
   image:
-    file: ../../assets/houston.webp
+    file: /public/favicon.svg
   actions:
-    - text: Example Guide
-      link: /guides/example/
+    - text: Inizia
+      link: /appunti-sta/lezioni/
       icon: right-arrow
-    - text: Read the Starlight docs
-      link: https://starlight.astro.build
+    - text: Contenuti del Corso
+      link: /appunti-sta/#contenuti-del-corso
       icon: external
       variant: minimal
 ---
 
 import { Card, CardGrid } from '@astrojs/starlight/components';
 
-## Next steps
+## Contenuti del Corso
 
 <CardGrid stagger>
-	<Card title="Update content" icon="pencil">
-		Edit `src/content/docs/index.mdx` to see this page change.
+	<Card title="Elettricità & Circuiti" icon="seti:notebook">
+		Impara come funziona l'elettricità e la base dei circuiti elettrici.
 	</Card>
-	<Card title="Change page layout" icon="document">
-		Delete `template: splash` in `src/content/docs/index.mdx` to display a
-		sidebar on this page.
+	<Card title="Legge di Ohm" icon="seti:vite">
+		Impara cos'è la legge di Ohm, importante tra i circuiti elettrici.
 	</Card>
-	<Card title="Add new content" icon="add-document">
-		Add Markdown or MDX files to `src/content/docs` to create new pages.
+	<Card title="Circuiti Fisici" icon="rocket">
+		Impara le basi dei circuiti su breadboard.
 	</Card>
-	<Card title="Configure your site" icon="setting">
-		Edit your `sidebar` and other config in `astro.config.mjs`.
+	<Card title="Componenti Base" icon="setting">
+		Crea circuiti con LED, pulsanti, resistenze e relè.
 	</Card>
-	<Card title="Read the docs" icon="open-book">
-		Learn more in [the Starlight Docs](https://starlight.astro.build/).
+	<Card title="Arduino" icon="laptop">
+		Impara ad utilizzare la scheda Arduino
+	</Card>
+	<Card title="Programmazione" icon="seti:cpp">
+		Impara le basi della programmazione con C++ e la scheda Arduino per creare circuiti intelligenti.
+	</Card>
+	<Card title="Circuiti Avanzati" icon="seti:crystal_embedded">
+		Impara a usare componenti più complessi, come sensori di temperatura e umidità, schermi LCD e altri, e a controllarli con programmazione C++ e Arduino.
 	</Card>
 </CardGrid>
