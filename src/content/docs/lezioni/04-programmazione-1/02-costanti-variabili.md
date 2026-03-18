@@ -9,8 +9,8 @@ Ogni programma, anche il più semplice, ha bisogno di ricordare delle informazio
 
 In C++, questi dati vengono salvati in due modi diversi a seconda di una domanda fondamentale: ***questo valore cambierà mai durante l'esecuzione del programma?***
 
-* Se la risposta è **no** → si usa una **Costante**
-* Se la risposta è **sì** → si usa una **Variabile**
+* Se la risposta è **no** -> si usa una **Costante**
+* Se la risposta è **sì** -> si usa una **Variabile**
 
 ---
 
@@ -41,7 +41,7 @@ Ogni dichiarazione di variabile deve terminare con `;`. Le righe con `#define` s
 :::
 
 :::note[Convenzione sui nomi]
-Per le costanti definite con `#define`, la convenzione vuole i nomi scritti tutti in **MAIUSCOLO** con le parole separate da underscore `_`. Non è obbligatorio, ma è un'abitudine seguita da tutti i programmatori.
+Per le costanti definite con `#define`, la convenzione vuole i nomi scritti tutti in **MAIUSCOLO** con le parole separate da underscore `_`. Non è obbligatorio, ma è un'abitudine seguita dai programmatori.
 :::
 
 ---
@@ -71,9 +71,13 @@ int monete = 0;
 
 C++ vuole sapere che tipo di informazione si metterà in una variabile. Questo perché tipi diversi occupano quantità diverse di memoria, e le operazioni che si possono fare su di essi cambiano.
 
-### Numeri Interi - `int`
+### Numeri Interi: `int`
 
-Usato per numeri **senza virgola**, positivi o negativi.
+Usato per numeri **senza virgola**, positivi o negativi. Occupa **2 byte** di memoria, il che gli impone un range preciso di valori rappresentabili.
+
+```
+int -> da -32.768 a +32.767
+```
 
 ```cpp
 int contatore = 0;
@@ -81,7 +85,28 @@ int temperatura = -5;
 int livello = 255;
 ```
 
-### Numeri Decimali - `float`
+### Numeri Interi Grandi: `long`
+
+Quando i valori da memorizzare superano i limiti di `int`, si usa `long`. Occupa **4 byte** di memoria (il doppio di `int`) e può quindi contenere numeri molto più grandi.
+
+```
+long -> da -2.147.483.648 a +2.147.483.647
+```
+
+```cpp
+long distanzaKm = 384400;       // Distanza Terra-Luna in km
+long millisecondi = 1000000;    // Un milione di ms
+```
+
+:::note[Quando usare `int` o `long`?]
+Per la maggior parte delle variabili su Arduino, `int` è sufficiente. Si passa a `long` solo quando si sa che il valore potrà superare 32.767, come ad esempio contatori che crescono molto, o valori di tempo espressi in millisecondi. Usare `long` quando `int` basterebbe spreca memoria inutilmente.
+:::
+
+:::caution[Usare `long` erroneamente]
+Usare una variabile `long` quando il tipo `int` può bastare in termini di spazio, comporta uno spreco memoria inutile nell'Arduino.
+:::
+
+### Numeri Decimali: `float`
 
 Usato per numeri **con la virgola**. Attenzione: in C++ il separatore decimale è il **punto**, non la virgola.
 
@@ -94,7 +119,7 @@ float tensione = 3.14;
 Se il valore può essere solo un numero intero (es. quante volte si preme un pulsante), usa sempre `int`. Il `float` è più pesante da elaborare per Arduino e va usato solo quando la virgola è davvero necessaria, ad esempio con letture di sensori di temperatura.
 :::
 
-### Logica - `bool`
+### Logica: `bool`
 
 Può contenere **solo due valori**: `true` (vero) oppure `false` (falso). Perfetto per tenere traccia di stati: il LED è acceso o spento? Il pulsante è premuto o no?
 
@@ -103,7 +128,7 @@ bool ledAcceso = false;
 bool allarmeAttivo = true;
 ```
 
-### Carattere singolo - `char`
+### Carattere singolo: `char`
 
 Contiene **un singolo carattere**, scritto tra **apici singoli** `' '`.
 
@@ -112,7 +137,7 @@ char voto = 'A';
 char iniziale = 'M';
 ```
 
-### Stringa - `char[]`
+### Stringa: `char[]`
 
 Per memorizzare una sequenza di caratteri (una parola, una frase), si usa un <ins>array</ins> di `char`. Il testo va scritto tra **virgolette doppie** `" "`.
 
@@ -131,11 +156,12 @@ char messaggio[] = "Temperatura OK";
 
 ## 📋 Riepilogo
 
-| Tipo | Cosa contiene | Esempio |
-|---|---|---|
-| `#define` | Una costante fissa | `#define LED_PIN 5` |
-| `int` | Numero intero | `int contatore = 0;` |
-| `float` | Numero decimale | `float temp = 23.5;` |
-| `bool` | Vero o falso | `bool acceso = false;` |
-| `char` | Un singolo carattere | `char lettera = 'A';` |
-| `char[]` | Una stringa di testo | `char msg[] = "Ciao";` |
+| Tipo | Cosa contiene | Range | Esempio |
+|---|---|---|---|
+| `#define` | Costante fissa | - | `#define LED_PIN 5` |
+| `int` | Numero intero | -32.768 -> 32.767 | `int contatore = 0;` |
+| `long` | Numero intero grande | -2.147.483.648 -> 2.147.483.647 | `long ms = 100000;` |
+| `float` | Numero decimale | ~3.4×10⁻³⁸ -> ~3.4×10³⁸ | `float temp = 23.5;` |
+| `bool` | Vero o falso | `true` / `false` | `bool acceso = false;` |
+| `char` | Un singolo carattere | - | `char lettera = 'A';` |
+| `char[]` | Una stringa di testo | - | `char msg[] = "Ciao";` |

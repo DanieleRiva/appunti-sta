@@ -89,7 +89,6 @@ export default defineConfig({
 							label: '💻 Programmazione 1',
 							collapsed: true,
 							items: [
-								// Mappiamo i file a mano. Nota: lo 'slug' è il percorso senza estensione e senza i numeri iniziali, perché Starlight li rimuove dalle URL.
 								{ label: 'Introduzione', slug: 'lezioni/04-programmazione-1/01-basi' },
 								{ label: 'Costanti e Variabili', slug: 'lezioni/04-programmazione-1/02-costanti-variabili' },
 								{ label: 'Blocchi di Codice e Funzioni', slug: 'lezioni/04-programmazione-1/03-funzioni' },
@@ -105,6 +104,11 @@ export default defineConfig({
 								},
 								{ label: 'Array', slug: 'lezioni/04-programmazione-1/10-array' }
 							]
+						},
+						{
+							label: '🖥️ Programmazione 2',
+							autogenerate: { directory: 'lezioni/05-programmazione-2' },
+							collapsed: true,
 						}
 					]
 				},
