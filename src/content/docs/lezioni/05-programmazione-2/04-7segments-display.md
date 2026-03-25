@@ -1,5 +1,5 @@
 ---
-title: Display a 7 Segmenti
+title: 7 Segments Display
 description: Come funziona, come si collega e come si programma un display a 7 segmenti con Arduino.
 ---
 
