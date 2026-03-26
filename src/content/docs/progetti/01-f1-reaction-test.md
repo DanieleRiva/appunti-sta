@@ -47,7 +47,7 @@ Invece di usare 5 LED rossi, adattiamo il concetto usando il **display a 7 segme
 
 **Fase 1: Avvio**
 
-Il giocatore preme il pulsante **START**. Tutti i LED si spengono e il display inizia a mostrare i numeri da `1` a `5`, uno al secondo esatto, gestiti con `millis()`.
+Il giocatore preme il pulsante **START**. Questo pulsante deve fungere da reset del gioco: invece di dover riavviare il programma per giocare nuovamente, ogni volta che si preme il pulsante **START** il gioco riparte da capo. Quindi, tutti i LED si spengono e il display inizia a mostrare i numeri da `1` a `5`, uno al secondo esatto, gestiti con `millis()`. In alternativa è possibile gestire il conto alla rovescia con `delay()`, dato che nel mentre il programma non deve fare altro.
 
 **Fase 2: Suspense**
 
