@@ -1,0 +1,85 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <style>
+        body {
+            display: flex;
+            justify-content: center;
+            align-items: center;
+            flex-direction: column;
+            gap: 16px;
+        }
+
+        .grid {
+            display: grid;
+            grid-template-columns: repeat(4, 50px);
+            gap: 10px;
+        }
+
+        .btn {
+            width: 50px;
+            height: 50px;
+            border: 1px solid #ccc;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            cursor: pointer;
+        }
+
+        .active-row {
+            background: #ffff0033;
+        }
+
+        .pressed {
+            background: #ff0000 !important;
+            color: white;
+        }
+
+        .signal {
+            background: #00ff00 !important;
+        }
+    </style>
+</head>
+
+<body>
+    <div id="status">Scansione in corso...</div>
+    <div class="grid" id="keypad"></div>
+
+    <script>
+        const keys = ['1', '2', '3', 'A', '4', '5', '6', 'B', '7', '8', '9', 'C', '*', '0', '#', 'D'];
+        const grid = document.getElementById('keypad');
+        let pressedKey = null;
+        let currentRow = 0;
+
+        // Crea i tasti
+        keys.forEach((key, i) => {
+            const btn = document.createElement('div');
+            btn.className = 'btn';
+            btn.innerText = key;
+            btn.onmousedown = () => pressedKey = i;
+            btn.onmouseup = () => pressedKey = null;
+            grid.appendChild(btn);
+        });
+
+        // Simula la scansione di Arduino
+        setInterval(() => {
+            const btns = document.querySelectorAll('.btn');
+            btns.forEach(b => b.classList.remove('active-row', 'signal'));
+
+            currentRow = (currentRow + 1) % 4;
+            const start = currentRow * 4;
+
+            for (let i = start; i < start + 4; i++) {
+                btns[i].classList.add('active-row');
+                if (pressedKey === i) {
+                    btns[i].classList.add('signal');
+                    document.getElementById('status').innerText = "Rilevato tasto: " + keys[i];
+                }
+            }
+            if (pressedKey === null) document.getElementById('status').innerText = "Scansione Riga " + (currentRow + 1);
+        }, 500);
+    </script>
+</body>
+
+</html>
