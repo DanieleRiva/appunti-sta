@@ -109,3 +109,47 @@ Questo codice stamperà tutti i valori in ordine, leggendo prima tutta la riga 0
 [4][5][6]
 [7][8][9]
 ```
+
+## Modificare i dati in una Matrice
+
+Come abbiamo accennato in precedenza, per modificare un singolo valore basta usare le sue coordinate e l'operatore di assegnazione `=`. Ad esempio, se stiamo programmando un gioco e vogliamo piazzare una 'X' esattamente al centro di una griglia 3x3:
+
+```cpp
+char griglia[3][3] = {
+  {' ', ' ', ' '},
+  {' ', ' ', ' '},
+  {' ', ' ', ' '}
+};
+
+// Inserisco una X al centro (Riga 1, Colonna 1)
+griglia[1][1] = 'X';
+```
+
+Quindi, dopo questa assegnazione, la matrice diventa:
+```cpp
+char griglia[3][3] = {
+  {' ', ' ', ' '},
+  {' ', 'X', ' '},
+  {' ', ' ', ' '}
+};
+```
+
+**Ma cosa succede se vogliamo modificare TUTTI i valori contemporaneamente?** Immagina di voler "resettare" la griglia per iniziare una nuova partita, svuotando tutte le caselle. Farlo a mano richiederebbe di scrivere 9 righe di codice che si ripetono (`griglia[0][0] = ' '; griglia[0][1] = ' ';` e così via). 
+
+La soluzione è sfruttare di nuovo i **cicli annidati**. Esattamente come li usiamo per leggere ogni singolo cassetto, possiamo usarli per "riempire" ogni singolo cassetto.
+
+```cpp
+// Funzione per svuotare tutta la griglia
+void resettaGriglia() {
+  // Scorro le righe
+  for (int i = 0; i < 3; i++) {
+    // Scorro le colonne
+    for (int j = 0; j < 3; j++) {
+      // Inserisco uno spazio vuoto nella cella corrente
+      griglia[i][j] = ' '; 
+    }
+  }
+}
+```
+
+Questa tecnica è fondamentale e importante da capire.
