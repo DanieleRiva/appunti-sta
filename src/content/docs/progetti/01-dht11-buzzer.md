@@ -1,5 +1,5 @@
 ---
-title: 'Progetto: Sistema di Monitoraggio Ambientale'
+title: 'Sistema di Monitoraggio Ambientale'
 description: Sistema di allarme per temperatura e umidità con DHT11, buzzer passivo, LED e pulsante di silenziamento.
 ---
 
