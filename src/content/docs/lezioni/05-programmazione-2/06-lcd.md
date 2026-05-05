@@ -36,7 +36,7 @@ Il display LCD ha **16 pin**. Nella tabella seguente sono indicati i collegament
 | 12 | **D5** | Pin digitale Arduino (es. 4) |
 | 13 | **D6** | Pin digitale Arduino (es. 3) |
 | 14 | **D7** | Pin digitale Arduino (es. 2) |
-| 15 | **LED+** | 5V di Arduino (retroilluminazione) |
+| 15 | **LED+** | 5V di Arduino (retroilluminazione) con resistenza 220Ω |
 | 16 | **LED-** | GND di Arduino (retroilluminazione) |
 
 Il potenziometro va collegato con i due piedini esterni a **5V** e **GND**, e il piedino centrale al **pin VO** del display. Ruotando il potenziometro si regola il contrasto dei caratteri sullo schermo.
